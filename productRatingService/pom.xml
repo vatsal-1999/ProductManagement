@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>ProductManagement</artifactId>
+		<groupId>com.vatsal</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>productRatingService</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>productRatingService</name>
+	<description>Demo project for Spring Boot</description>
+	<dependencies>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>io.swagger.codegen.v3</groupId>
+				<artifactId>swagger-codegen-maven-plugin</artifactId>
+				<version>3.0.18</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<inputSpec>${project.basedir}/src/main/resources/api-docs/product-details-service.yaml</inputSpec>
+							<language>java</language>
+							<library>resttemplate</library>
+							<output>${project.build.directory}/generated-sources/</output>
+							<apiPackage>com.vatsal.productRatingService.api</apiPackage>
+							<modelPackage>com.vatsal.productRatingService.models</modelPackage>
+							<configOptions>
+								<useRuntimeException>true</useRuntimeException>
+								<dataLibrary>java8</dataLibrary>
+								<java8>true</java8>
+							</configOptions>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
