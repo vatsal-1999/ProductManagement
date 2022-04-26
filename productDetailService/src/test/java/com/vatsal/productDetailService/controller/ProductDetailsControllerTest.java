@@ -38,7 +38,7 @@ class ProductDetailsControllerTest {
 
     @Test
     void getProductById() throws Exception {
-//      mockMvc.perform(MockMvcRequestBuilders.get("/product-details/getProduct/{id}",1)).andExpect(status().isOk());
+      mockMvc.perform(MockMvcRequestBuilders.get("/product-details/getProduct/{id}",1)).andExpect(status().isOk());
     }
 
     @Test

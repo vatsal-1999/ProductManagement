@@ -10,8 +10,10 @@ import javax.persistence.Id;
 
 @Getter
 @Setter
-@NoArgsConstructor
 public class ProductDetails {
+
+    public ProductDetails() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
