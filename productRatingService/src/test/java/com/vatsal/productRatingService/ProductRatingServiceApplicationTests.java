@@ -38,6 +38,6 @@ class ProductRatingServiceApplicationTests {
 
 	@Test
 	void getProductById() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/product-ratings/getProduct/{id}",1)).andExpect(status().isOk());
+		mockMvc.perform(MockMvcRequestBuilders.get("/product-ratings/getProduct/{id}",3)).andExpect(status().isOk());
 	}
 }

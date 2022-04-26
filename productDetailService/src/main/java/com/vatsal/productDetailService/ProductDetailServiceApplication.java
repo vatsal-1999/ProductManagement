@@ -17,10 +17,19 @@ import java.util.Random;
 		version = "1.1",
 		description = "Microservice for providing details of a product"
 ))
-public class ProductDetailServiceApplication {
+public class ProductDetailServiceApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProductDetailServiceApplication.class, args);
 	}
 
+	@Autowired
+	ProductDetailsService service;
+
+	@Override
+	public void run(String... args) throws Exception {
+		for (int i=1; i<=200; i++) {
+			service.addProduct(new ProductDetails("Product"+i,new Random().nextInt(1000),new Random().nextInt(3000)));
+		}
+	}
 }
